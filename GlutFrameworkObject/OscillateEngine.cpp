@@ -49,6 +49,21 @@ namespace glFrameworkBasic {
 		drawItems.push_back(square2);
 	}
 
+	void OscillateEngine::preDisplayLoop(){
+		glPushMatrix();						// Save model-view matrix setting
+
+		// Draw a Bounding Box:
+		glBegin(GL_LINE_LOOP);				// Each set of 4 vertices form a quad
+		glColor3f(1.0f, 1.0f, 1.0f);	// White
+		glVertex2f(-100.0f, -100.0f);		// Bottom Left
+		glVertex2f(-100.0f, 100.0f);		// Top Left
+		glVertex2f(100.0f, 100.0f);			// Top Right
+		glVertex2f(100.0f, -100.0f);		// Bottom Right
+		glEnd();						// Done drawing quads.
+
+		glPopMatrix();		// Restore the model-view matrix
+	}
+
 	// Destructor is already chained.
 	OscillateEngine::~OscillateEngine()
 	{

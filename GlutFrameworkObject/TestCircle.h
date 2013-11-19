@@ -19,10 +19,10 @@ namespace glFrameworkBasic {
 
 			// Hard coded for test. Should get screen width and calculate extremes.
 			// See here: http://www.opengl.org/documentation/specs/glut/spec3/node70.html
-			if (xPos >= 130) xVel = xVel * -1;
-			else if (xPos <= -130) xVel = xVel * -1;
-			if (yPos >= 100) yVel = yVel * -1;
-			else if (yPos <= -100) yVel = yVel * -1;
+			if (xPos >= 90) xVel = xVel * -1;
+			else if (xPos <= -90) xVel = xVel * -1;
+			if (yPos >= 90) yVel = yVel * -1;
+			else if (yPos <= -90) yVel = yVel * -1;
 		}
 
 		void Draw()

@@ -7,6 +7,7 @@ namespace glFrameworkBasic {
 	public:
 		OscillateEngine();
 		~OscillateEngine();
+		void preDisplayLoop();
 	};
 
 }
