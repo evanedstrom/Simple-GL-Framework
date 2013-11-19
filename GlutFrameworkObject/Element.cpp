@@ -10,7 +10,7 @@
 /// GNU General Public License for more details.
 ///
 /// You should have received a copy of the GNU General Public License
-/// along with Foobar.If not, see <http://www.gnu.org/licenses/>.
+/// along with GlFrameworkBasic. If not, see <http://www.gnu.org/licenses/>.
 ///
 /// Author: Evan Edstrom
 /// Date: 11/17/2013
