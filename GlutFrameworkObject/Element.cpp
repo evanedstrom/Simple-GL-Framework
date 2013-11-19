@@ -15,6 +15,7 @@
 /// Author: Evan Edstrom
 /// Date: 11/17/2013
 /// Website: http://evanedstrom.com/glstart
+/// Email: contact@evanedstrom.com
 ///
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -61,6 +62,13 @@ namespace glFrameworkBasic {
 		xPos += xVel;
 		yPos += yVel;
 		zPos += zVel;
+	}
+
+	void Element::BeforeDraw() {
+		// Implement in derived class.
+	}
+	void Element::AfterDraw() {
+		// Implement in derived class.
 	}
 
 	// Mutators:

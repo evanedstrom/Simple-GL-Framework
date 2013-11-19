@@ -15,6 +15,7 @@
 /// Author: Evan Edstrom
 /// Date: 11/17/2013
 /// Website: http://evanedstrom.com/glstart
+/// Email: contact@evanedstrom.com
 ///
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -59,6 +60,18 @@ namespace glFrameworkBasic {
 		/// Does not handle rotational velocity.
 		/// </summary>
 		virtual void Move();
+
+		/// <summary>
+		/// Generic function not implemented in base class. Is called by
+		/// the display loop of Engine after Move() but before Draw().
+		/// </summary>
+		virtual void BeforeDraw();
+
+		/// <summary>
+		/// Generic function not implemented in base class. Is called by
+		/// the display loop of Engine after Draw().
+		/// </summary>
+		virtual void AfterDraw();
 
 		/// <summary>Set the position values.</summary>
 		void SetPosition(float x, float y);

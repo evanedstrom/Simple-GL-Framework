@@ -15,6 +15,7 @@
 /// Author: Evan Edstrom
 /// Date: 11/17/2013
 /// Website: http://evanedstrom.com/glstart
+/// Email: contact@evanedstrom.com
 ///
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -74,6 +75,7 @@ namespace glFrameworkBasic {
 		glutTimerFunc(0, timer, 0);			// First timer call immediately
 		
 		initGL();		// Our own OpenGL initialization
+		setup();		// Any user defined setup that needs to happen.
 		glutMainLoop();	// Enter the infinite event-processing loop
 	}
 
@@ -81,19 +83,41 @@ namespace glFrameworkBasic {
 		glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Black and opaque
 	}
 
+	void Engine::setup(){
+		// Implement in derived class.
+	}
+
 	void Engine::display(){
 		glClear(GL_COLOR_BUFFER_BIT);   // Clear the color buffer
 		glMatrixMode(GL_MODELVIEW);     // To operate on Model-View matrix
 		glLoadIdentity();               // Reset the model-view matrix
 		
+		// Call the pre display loop:
+		preDisplayLoop();
+
+		// Do the loop
 		for (unsigned int i = 0; i < drawItems.size(); i++)
 		{
 			drawItems.at(i)->Move();
+			drawItems.at(i)->BeforeDraw();
 			drawItems.at(i)->Draw();
+			drawItems.at(i)->AfterDraw();
 		}
+
+		// Call the post display loop:
+		postDisplayLoop();
 
 		glutSwapBuffers();   // Double buffered - swap the front and back buffers
 	}
+
+	void Engine::preDisplayLoop(){
+		// Implement in derived class.
+	}
+
+	void Engine::postDisplayLoop(){
+		// Implement in derived class.
+	}
+
 	void Engine::reshape(GLsizei width, GLsizei height){
 		// Compute aspect ratio of the new window
 		if (height == 0) height = 1;	// To prevent divide by 0
@@ -123,10 +147,12 @@ namespace glFrameworkBasic {
 	void Engine::idle(){
 		glutPostRedisplay();   // Post a re-paint request to activate display()
 	}
+
 	void Engine::timer(int value){
 		glutPostRedisplay();      // Post re-paint request to activate display()
 		glutTimerFunc(refreshMills, timer, 0); // next Timer call milliseconds later
 	}
+
 	void Engine::mousePressFunc(int button, int state, int x, int y){
 		/* Override this method in a subclass*/
 	}
@@ -177,9 +203,11 @@ namespace glFrameworkBasic {
 	void Engine::displayWrapper(){
 		instance->display();
 	}
+
 	void Engine::reshapeWrapper(GLsizei width, GLsizei height){
 		instance->reshape(width, height);
 	}
+
 	void Engine::mousePressWrapper(int button, int state, int x, int y){
 		instance->mousePressFunc(button, state, x, y);
 	}
@@ -203,5 +231,4 @@ namespace glFrameworkBasic {
 	void Engine::specialKeyboardDownWrapper(int key, int x, int y){
 		instance->specialKeyboardDown(key, x, y);
 	}
-
 }

@@ -15,6 +15,7 @@
 /// Author: Evan Edstrom
 /// Date: 11/17/2013
 /// Website: http://evanedstrom.com/glstart
+/// Email: contact@evanedstrom.com
 ///
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -115,7 +116,13 @@ namespace glFrameworkBasic {
 		Keyboard keyStates;
 
 		/// <summary>Contains initilization procedures for GLUT.</summary>
-		void initGL();
+		virtual void initGL();
+
+		/// <summary>
+		/// Generic function not implemented in base class. Is called
+		/// during Begin() after initGL() but before glutMainLoop().
+		/// </summary>
+		virtual void setup();
 
 		/// <summary>
 		/// display is called every frame and contains logic for iterating
@@ -126,17 +133,31 @@ namespace glFrameworkBasic {
 		virtual void display();
 
 		/// <summary>
+		/// Generic function not implemented in base class. Is called
+		/// the before looping through vector in display(). Suggested uses
+		/// include bounds checking, collision checking, and gameplay logic.
+		/// </summary>
+		virtual void preDisplayLoop();
+
+		/// <summary>
+		/// Generic function not implemented in base class. Is called
+		/// the after looping through vector in display(). Suggested uses
+		/// include bounds checking, collision checking, and gameplay logic.
+		/// </summary>
+		virtual void postDisplayLoop();
+
+		/// <summary>
 		/// Called on start and when window is resized.
 		/// Designed to preserve aspect ration on different size windows
 		/// so that objects are not distorted.
 		/// </summary>
-		void reshape(GLsizei width, GLsizei height);
+		virtual void reshape(GLsizei width, GLsizei height);
 
 		/// <summary>
 		/// Post a re-paint request.
 		/// Not needed when using double buffers.
 		/// </summary>
-		void idle();
+		virtual void idle();
 
 		/// <summary>
 		/// Maintains a constant clock for drawing frames.
