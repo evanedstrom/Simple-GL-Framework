@@ -22,6 +22,10 @@ The framework is comprised of two main components, Engine and Element.
 * Overwrite Draw() in a subclass to get specific drawing behavior.
 * Overwrite Move() in a subclass to get specific movement behavior.
 
+## Compatibility
+* The master branch contains solution for Visual Studio 2013.
+* There is a branch that contains a Visual Studio 2012 solution if needed.
+
 ## More Info
 Written for Whitworth University for use in introductory programming courses.
 > Author: Evan Edstrom
