@@ -21,7 +21,6 @@
 
 #pragma once
 #include <sstream>
-#include <GL\gl.h>
 #include <GL\glut.h>
 #include <vector>
 
@@ -48,14 +47,13 @@ namespace glFrameworkBasic {
 		Engine();
 
 		/// <summary>
-		/// Engine BackColor Constructor. Calls glClearColor which makes the background
-		/// go to a different color.
+		/// Constructor for setting matrix projection scale. Scales call
+		/// to gluOrtho2D to influence camera distance.
 		/// </summary>
-		/// <param name="rBack">Red Value from 0 to 1</param>
-		/// <param name="gBack">Green Value from 0 to 1</param>
-		/// <param name="bBack">Blue Value from 0 to 1</param>
-		/// <param name="aBack">Alpha Value from 0 to 1, where 1 is solid.</param>
-		Engine(float rBack, float gBack, float bBack, float aBack);
+		/// <param name="projectionScale">
+		/// Float multiplier. Default is 100.0, should not be 0.
+		/// </param>
+		Engine(float projectionScale);
 		
 		/// <summary>
 		/// Destructor for Engine. Properly deletes all items in draw vector
@@ -101,13 +99,13 @@ namespace glFrameworkBasic {
 		std::vector<Element *> drawItems;
 
 		static const int refreshMills = 30; // refresh interval in milliseconds
-		const float MatrixProjectionScale = 100.0f; // Scale used for reshape function to determine unit scale.
-		int WINDOW_WIDTH = 640;		// Window width in pixels
-		int WINDOW_HEIGHT = 480;	// Window height in pixels
-		int WINDOW_POS_X = 50;		// Window top left position (x) in pixels
-		int WINDOW_POS_Y = 50;		// Window top left position (y) in pixels
-		bool DO_FULL_SCN = false;		// If the window should open in full-screen
-		std::string windowTitle = "GLUT Framework Basic - By Evan Edstrom";
+		float MatrixProjectionScale; // Scale used for reshape function to determine unit scale.
+		int WINDOW_WIDTH;		// Window width in pixels
+		int WINDOW_HEIGHT;	// Window height in pixels
+		int WINDOW_POS_X;		// Window top left position (x) in pixels
+		int WINDOW_POS_Y;		// Window top left position (y) in pixels
+		bool DO_FULL_SCN;		// If the window should open in full-screen
+		std::string windowTitle;
 
 		// Instance pointer to self. Needed for passing event handlers to glut.
 		static Engine *instance;

@@ -81,7 +81,6 @@
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="OscillateEngine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Element.h" />

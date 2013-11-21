@@ -27,9 +27,6 @@
     <ClCompile Include="Keyboard.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="OscillateEngine.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Element.h">

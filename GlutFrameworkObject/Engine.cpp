@@ -27,11 +27,27 @@ namespace glFrameworkBasic {
 	Engine::Engine()
 	{
 		instance = this;
+
+		MatrixProjectionScale = 100.0;
+		WINDOW_WIDTH = 640;
+		WINDOW_HEIGHT = 480;
+		WINDOW_POS_X = 50;
+		WINDOW_POS_Y = 50;
+		DO_FULL_SCN = false;
+		windowTitle = "GLUT Framework Basic - By Evan Edstrom";
 	}
-	Engine::Engine(float rBack, float gBack, float bBack, float aBack)
+
+	Engine::Engine(float projectionScale)
 	{
 		instance = this;
-		glClearColor(rBack, gBack, bBack, aBack);
+
+		MatrixProjectionScale = projectionScale;
+		WINDOW_WIDTH = 640;
+		WINDOW_HEIGHT = 480;
+		WINDOW_POS_X = 50;
+		WINDOW_POS_Y = 50;
+		DO_FULL_SCN = false;
+		windowTitle = "GLUT Framework Basic - By Evan Edstrom";
 	}
 
 	Engine::~Engine() { 
