@@ -163,22 +163,38 @@ namespace glFrameworkBasic {
 		/// </summary>
 		static void timer(int value);
 		
-		// <summary>Mouse Press event handler. Not implemented, must override.</summary>
+		/// <summary>
+		/// Mouse Press event handler. Not implemented, must override.
+		/// </summary>
 		virtual void mousePressFunc(int button, int state, int x, int y);
 		
-		// <summary>Mouse Move event handler. Not implemented, must override.</summary>
+		/// <summary>
+		/// Mouse Move event handler. Not implemented, must override.
+		/// </summary>
 		virtual void mouseMoveFunc(int x, int y);
 
-		// <summary>Key Release event handler. Not implemented, must override.</summary>
+		/// <summary>
+		/// Key Release event handler. Not implemented, must override.
+		/// Uses ASCII integer value. Table at http://asciitable.com
+		/// Careful of case.
+		/// </summary>
 		virtual void keyboardUp(unsigned char key, int x, int y);
 		
-		// <summary>Key Press event handler. Looks for escape to exit.</summary>
+		/// <summary>
+		/// Key Press event handler. Looks for escape to exit.
+		/// Uses ASCII integer value. Table at http://asciitable.com
+		/// Careful of case. See cpp for reference
+		/// </summary>
 		virtual void keyboardDown(unsigned char key, int x, int y);
 		
-		// <summary>Special Key Release event handler. Not implemented, must override.</summary>
+		/// <summary>
+		/// Special Key Release event handler. Not implemented, must override.
+		/// </summary>
 		virtual void specialKeyboardUp(int key, int x, int y);
 		
-		// <summary>Special Key Press event handler. Not implemented, must override.</summary>
+		/// <summary>
+		/// Special Key Press event handler. Not implemented, must override.
+		/// </summary>
 		virtual void specialKeyboardDown(int key, int x, int y);
 
 	private:

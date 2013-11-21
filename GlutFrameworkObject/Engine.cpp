@@ -179,11 +179,13 @@ namespace glFrameworkBasic {
 
 	void Engine::keyboardUp(unsigned char key, int x, int y){
 		/* Override this method in a subclass*/
+		/* Uses ASCII integer value. Table at http://asciitable.com */
 		keyStates.keyUp((int)key);
 	}
 
 	void Engine::keyboardDown(unsigned char key, int x, int y){
 		/* Override this method in a subclass*/
+		/* Uses ASCII integer value. Table at http://asciitable.com */
 		if (key == 27) exit(0); // escape key
 		keyStates.keyDown((int)key);
 	}

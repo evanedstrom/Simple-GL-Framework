@@ -28,6 +28,7 @@ namespace glFrameworkBasic {
 		xVel = 0; yVel = 0; zVel = 0;
 		xScale = 1.0f; yScale = 1.0f; zScale = 1.0f;
 		rotAngle = 0.0f;
+		show = true;
 	}
 
 	Element::~Element()

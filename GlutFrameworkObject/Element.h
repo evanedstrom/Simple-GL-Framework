@@ -36,7 +36,7 @@ namespace glFrameworkBasic {
 		float xVel, yVel, zVel;
 		float xScale, yScale, zScale;
 		float rotAngle; 
-		bool show = true;
+		bool show;
 
 	public:
 		/// Initializes positions and velocities to 0.
